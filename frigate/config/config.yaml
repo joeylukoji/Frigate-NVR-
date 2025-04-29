@@ -1,0 +1,25 @@
+mqtt:
+  enabled: false
+
+cameras:
+  webcam_pc:  # Nom personnalisé pour votre webcam
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path:"/dev/video0:/dev/video0" # Chemin direct vers la webcam
+          input_args: -"f" 
+                      - "v4l2"
+                      -"input_format"
+                      -"yuyv422"
+                      -"-framerate"
+                      -"30"
+                                                                                             # Arguments spécifiques webcam
+          roles: [detect]
+    detect:
+      enabled: true  # Activation de la détection
+      width: 1280    # À adapter selon les capacités de votre webcam
+      height: 720
+      fps: 30         # Images par seconde recommandées
+
+# Version obligatoire pour Frigate 0.13+
+version: 0.15-1
