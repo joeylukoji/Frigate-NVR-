@@ -1,0 +1,12 @@
+.env
+
+# Donnees generees par les conteneurs
+frigate/config/*.db
+frigate/config/backup_config.yaml
+frigate/media/
+homeassistant/config/
+mosquitto/data/
+mosquitto/log/
+
+# Logs
+*.log
